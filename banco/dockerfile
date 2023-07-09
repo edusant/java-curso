@@ -1,0 +1,17 @@
+# Use a imagem oficial do PostgreSQL como imagem base
+FROM postgres
+
+# Defina a variável de ambiente para a senha do usuário "postgres"
+ENV POSTGRES_PASSWORD 1234
+
+# Instale a extensão postgresql-contrib para suporte a REST API
+RUN apt-get update && apt-get install -y postgresql-contrib
+
+# Copie um script SQL (se necessário) para dentro do contêiner
+#COPY script.sql /docker-entrypoint-initdb.d/
+
+# Exponha a porta padrão do PostgreSQL
+EXPOSE 5432
+
+# Defina um volume para persistência de dados
+VOLUME /var/lib/postgresql/data
