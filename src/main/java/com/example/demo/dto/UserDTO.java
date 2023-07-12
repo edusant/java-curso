@@ -1,7 +1,4 @@
-package dto;
-
-import java.util.UUID;
-
+package com.example.demo.dto;
 import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
